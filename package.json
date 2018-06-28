@@ -1,0 +1,11 @@
+{
+  "name": "nuber",
+  "version": "1.0.0",
+  "description": "Made while taking mongo course by stephen grider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sahil Naikdhure",
+  "license": "ISC"
+}
