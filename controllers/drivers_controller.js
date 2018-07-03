@@ -7,7 +7,9 @@ module.exports = {
     },
 
     create(req, res) {
-        console.log(req.body);
-        res.send({sup: 'bro'})
+        const driverProps = req.body;
+
+        Driver.create(driverProps)
+            .then((driver)=> res.send(driver) );
     }
 }
