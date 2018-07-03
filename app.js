@@ -1,9 +1,8 @@
 const express = require('express');
-
 const app = express();
 
-app.get('/api', (req, res)=>{
-    res.send({sup: 'bro'});
-});
+const routes = require('./routes/routes');
+
+routes(app);
 
 module.exports = app;
