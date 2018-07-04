@@ -39,4 +39,23 @@ describe('Drivers Controller', ()=>{
                 
             })
     })
+
+    it('Delete request /api/drivers/:id deletes the driver with the given id', (done)=>{
+        const driver = new Driver({ email:'deleteDriver@t.com' });
+
+        driver.save()
+            .then(()=>{
+                Driver.count().then((count)=>{
+                    request(app)
+                    .delete(`/api/drivers/${driver._id}`)
+                    .end(()=>{
+                        Driver.count().then(newCount =>{
+                            assert(count - 1 === newCount);
+                            done();
+                        })
+                    })
+                })
+                
+            })
+    })
 })
