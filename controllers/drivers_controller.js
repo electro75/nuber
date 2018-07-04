@@ -38,7 +38,6 @@ module.exports = {
                 res.send(drivers);
             })
             .catch(next);
-
     },
 
     create(req, res, next) {
