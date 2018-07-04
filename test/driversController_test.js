@@ -20,4 +20,23 @@ describe('Drivers Controller', ()=>{
         })
             
     })
+
+    it('Put request /api/drivers/:id edits a driver with the id', (done)=>{
+        const driver = new Driver({email: 'testDriver@g.com', driving: false});
+
+        driver.save()
+            .then(()=>{
+                request(app)
+                .put(`/api/drivers/${driver._id}`)
+                .send({ driving: true })
+                .end(()=>{
+                    Driver.findOne({email: 'testDriver@g.com'})
+                        .then(driver =>{
+                            assert(driver.driving === true);
+                            done();
+                        })
+                })
+                
+            })
+    })
 })
