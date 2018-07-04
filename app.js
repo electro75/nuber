@@ -13,5 +13,11 @@ if (process.env.NODE_ENV !== 'test') {
 
 app.use(express.json());         // app.use call should always be called before routes call.
 routes(app);                     // body-parser middleware is now inbuilt in express.
+app.use((err, req, res, next)=>{
+    res
+    .status(422)
+    .send({error: err.message});
+})
+
 
 module.exports = app;
