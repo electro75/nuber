@@ -4,7 +4,7 @@
   "description": "Made while taking mongo course by stephen grider",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --exec \"mocha -R min\""
+    "test": " SET NODE_ENV=test | nodemon --exec \"mocha -R min\""
   },
   "author": "Sahil Naikdhure",
   "license": "ISC",
